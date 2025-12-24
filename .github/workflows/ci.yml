@@ -32,5 +32,8 @@ jobs:
       - name: Configure simpletest
         run: cp test-settings.sample.php test-settings.php
 
+      - name: Fix PHP 8.5 imcompatibility in simpletest
+        run: cp tests/patches/simpletest-errors.php vendor/simpletest/simpletest/src/errors.php
+
       - name: Execute Unit tests
         run: php tests/index.php
