@@ -33,7 +33,7 @@ class HTMLPurifier_URISchemeRegistry
 
     /**
      * Retrieves a scheme validator object
-     * @param string $scheme String scheme name like http or mailto
+     * @param string|null $scheme String scheme name like http or mailto
      * @param HTMLPurifier_Config $config
      * @param HTMLPurifier_Context $context
      * @return HTMLPurifier_URIScheme
@@ -52,6 +52,9 @@ class HTMLPurifier_URISchemeRegistry
             return;
         }
 
+        if ($scheme === null) {
+            return;
+        }
         if (isset($this->schemes[$scheme])) {
             return $this->schemes[$scheme];
         }
