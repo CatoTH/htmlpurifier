@@ -43,7 +43,7 @@ class HTMLPurifierTest extends HTMLPurifier_Harness
     {
         $purifier  = HTMLPurifier::getInstance();
         $purifier2 = HTMLPurifier::getInstance();
-        $this->assertReference($purifier, $purifier2);
+        $this->assertSame($purifier, $purifier2);
     }
 
     public function testMakeAbsolute()

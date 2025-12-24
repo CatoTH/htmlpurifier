@@ -39,7 +39,7 @@ class HTMLPurifier_HTMLModuleTest extends HTMLPurifier_Harness
 
         $this->assertIdentical($module, $module2);
         $this->assertIdentical($def, $def2);
-        $this->assertReference($def, $module->info['a']);
+        $this->assertSame($def, $module->info['a']);
 
     }
 
@@ -112,7 +112,7 @@ class HTMLPurifier_HTMLModuleTest extends HTMLPurifier_Harness
         $def2 = new HTMLPurifier_ElementDef();
         $def2->standalone = false;
 
-        $this->assertReference($module->info['a'], $def);
+        $this->assertSame($module->info['a'], $def);
         $this->assertIdentical($def, $def2);
 
     }

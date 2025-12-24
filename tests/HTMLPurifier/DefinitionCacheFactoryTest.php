@@ -49,7 +49,7 @@ class HTMLPurifier_DefinitionCacheFactoryTest extends HTMLPurifier_Harness
     {
         $cache  = $this->factory->create('Test', $this->config);
         $cache2 = $this->factory->create('Test', $this->config);
-        $this->assertReference($cache, $cache2);
+        $this->assertSame($cache, $cache2);
     }
 
     public function test_create_invalid()
